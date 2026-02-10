@@ -1,4 +1,10 @@
 // 🧹 Fix for ENOSPC / temp overflow in hosted panels
+const fs = require("fs");
+
+if (!fs.existsSync("./creds.json")) {
+  fs.writeFileSync("./creds.json", process.env.CREDS_JSON);
+}
+
 const fs = require('fs');
 const path = require('path');
 
